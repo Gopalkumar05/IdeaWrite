@@ -2,7 +2,7 @@
 // services/api.js - Fixed version
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://ideawrite.onrender.com/api';
 
 // Create axios instance
 const api = axios.create({
@@ -122,7 +122,7 @@ export const getFullImageUrl = (path) => {
   if (path.startsWith('http')) return path;
   // Ensure the path starts with /uploads
   const normalizedPath = path.startsWith('/uploads') ? path : `/uploads${path}`;
-  return `http://localhost:5000${normalizedPath}`;
+  return `https://ideawrite.onrender.com${normalizedPath}`;
 };
 
 
