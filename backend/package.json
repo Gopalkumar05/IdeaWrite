@@ -1,5 +1,17 @@
+
+
+
 {
-  "dependencies": {
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "postinstall": "cd ../frontend && npm install && npm run build"
+  },
+    "dependencies": {
     "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
@@ -14,4 +26,5 @@
     "nodemon": "^3.1.10",
     "resend": "^6.1.2"
   }
+ 
 }
