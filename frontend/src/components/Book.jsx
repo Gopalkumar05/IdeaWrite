@@ -410,7 +410,7 @@ const Book = () => {
     setSearchQuery('');
   };
 
-  const createNewBook = async (title = 'My Digital Journal', description = 'My personal journal') => {
+  const createNewBook = async (title = 'My Digital NoteBook', description = 'My personal NoteBook') => {
     try {
       setLoading(true);
       const response = await bookAPI.createBook({ title, description, pages: properInitialPages });
