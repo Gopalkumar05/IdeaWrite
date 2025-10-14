@@ -2,209 +2,10 @@
 
 
 
-// import React, { useState } from 'react';
 
-// const ControlPanel = ({
-//   isBookOpen,
-//   openBook,
-//   closeBook,
- 
-//   setShowCustomization,
-//   setShowTemplates,
-//   setShowSearch,
-//   addPageSpread,
-//   showCustomization,
-//   showTemplates,
-//   showSearch,
-//   currentBook,
- 
-//   setShowBookList,
-  
-//   user,
-//   onLogout,
-//   createNewBook,
-//   isLoading,
-//   isAddingPage,
-//   isFlipping,
-//   onDownloadBook,
-//   isDownloading
-// }) => {
-//   const [showDownloadMenu, setShowDownloadMenu] = useState(false);
-
-//   return (
-//     <div className="fixed top-4 left-4 right-4 z-40 flex justify-between items-center">
-//       {/* Left Side Controls */}
-//       <div className="flex items-center gap-3">
-//         {/* Book List Button */}
-//         <button
-//           onClick={() => setShowBookList(true)}
-//           className="bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 px-4 py-2 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-2 backdrop-blur-sm"
-//         >
-//           <span>📚</span>
-//           Journals
-//         </button>
-
-//         {/* New Book Button */}
-//         <button
-//           onClick={createNewBook}
-          
-//           disabled={isLoading}
-//           className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-2 disabled:opacity-50"
-//         >
-//           <span>➕</span>
-//           New Journal
-//         </button>
-//       </div>
-
-//       {/* Center Controls - Only show when book is open */}
-//       {isBookOpen && (
-//         <div className="flex items-center gap-3">
-//           {/* Search Button */}
-//           <button
-//             onClick={() => setShowSearch(!showSearch)}
-//             className={`px-4 py-2 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-2 backdrop-blur-sm ${
-//               showSearch 
-//                 ? 'bg-blue-500 text-white' 
-//                 : 'bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800'
-//             }`}
-//           >
-//             <span>🔍</span>
-//             Search
-//           </button>
-
-//           {/* Templates Button */}
-//           <button
-//             onClick={() => setShowTemplates(!showTemplates)}
-//             className={`px-4 py-2 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-2 backdrop-blur-sm ${
-//               showTemplates 
-//                 ? 'bg-purple-500 text-white' 
-//                 : 'bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800'
-//             }`}
-//           >
-//             <span>🎨</span>
-//             Templates
-//           </button>
-
-//           {/* Customize Button */}
-//           <button
-//             onClick={() => setShowCustomization(!showCustomization)}
-//             className={`px-4 py-2 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-2 backdrop-blur-sm ${
-//               showCustomization 
-//                 ? 'bg-pink-500 text-white' 
-//                 : 'bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800'
-//             }`}
-//           >
-//             <span>⚙️</span>
-//             Customize
-//           </button>
-
-//           {/* Add Page Button */}
-//           <button
-//             onClick={() => addPageSpread()}
-//             disabled={isAddingPage || isFlipping}
-//             className="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-2 disabled:opacity-50"
-//           >
-//             <span>📄</span>
-//             Add Pages
-//           </button>
-
-//           {/* Download Button */}
-//           <div className="relative">
-//             <button
-//               onClick={() => setShowDownloadMenu(!showDownloadMenu)}
-//               disabled={isDownloading || !currentBook}
-//               className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-2 disabled:opacity-50"
-//             >
-//               {isDownloading ? (
-//                 <>
-//                   <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-//                   Generating...
-//                 </>
-//               ) : (
-//                 <>
-//                   <span>📥</span>
-//                   Download
-//                 </>
-//               )}
-//             </button>
-
-//             {/* Download Dropdown Menu */}
-//             {showDownloadMenu && !isDownloading && (
-//               <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
-//                 <button
-//                   onClick={() => {
-//                     onDownloadBook('html');
-//                     setShowDownloadMenu(false);
-//                   }}
-//                   className="w-full px-4 py-3 text-left hover:bg-gray-50 flex items-center gap-3 rounded-t-lg border-b border-gray-100"
-//                 >
-//                   <span className="text-blue-500">🌐</span>
-//                   <div>
-//                     <div className="font-medium text-gray-900">Web Page</div>
-//                     <div className="text-xs text-gray-500">Beautiful online view</div>
-//                   </div>
-//                 </button>
-                
-//                 <button
-//                   onClick={() => {
-//                     onDownloadBook('pdf');
-//                     setShowDownloadMenu(false);
-//                   }}
-//                   className="w-full px-4 py-3 text-left hover:bg-gray-50 flex items-center gap-3 rounded-b-lg"
-//                 >
-//                   <span className="text-red-500">📄</span>
-//                   <div>
-//                     <div className="font-medium text-gray-900">PDF Document</div>
-//                     <div className="text-xs text-gray-500">Simple text format</div>
-//                   </div>
-//                 </button>
-//               </div>
-//             )}
-//           </div>
-//         </div>
-//       )}
-
-//       {/* Right Side Controls */}
-//       <div className="flex items-center gap-3">
-//         {/* Open/Close Book Button */}
-//         <button
-//           onClick={isBookOpen ? closeBook : openBook}
-//           disabled={isFlipping || !currentBook}
-//           className="bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 px-6 py-2 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-2 backdrop-blur-sm disabled:opacity-50"
-//         >
-//           <span>{isBookOpen ? '📖' : '📘'}</span>
-//           {isBookOpen ? 'Close Journal' : 'Open Journal'}
-//         </button>
-
-//         {/* User Profile */}
-//         {user && (
-//           <div className="flex items-center gap-3 bg-white bg-opacity-90 rounded-lg px-4 py-2 backdrop-blur-sm">
-//             <span className="text-sm text-gray-700">👤 {user.username}</span>
-//             <button
-//               onClick={onLogout}
-//               className="text-sm text-red-500 hover:text-red-700 transition-colors"
-//             >
-//               Logout
-//             </button>
-//           </div>
-//         )}
-//       </div>
-
-//       {/* Close dropdown when clicking outside */}
-//       {showDownloadMenu && (
-//         <div 
-//           className="fixed inset-0 z-40" 
-//           onClick={() => setShowDownloadMenu(false)}
-//         />
-//       )}
-//     </div>
-//   );
-// };
-
-// export default ControlPanel;
 
 import React, { useState, useEffect } from 'react';
-
+import { Search,BookDashed,Columns3Cog,FilePlus2,Plus,BookDown,LogOut,Menu,Library  } from 'lucide-react';
 const ControlPanel = ({
   isBookOpen,
   openBook,
@@ -263,8 +64,8 @@ const ControlPanel = ({
         onClick={() => setShowBookList(true)}
         className="bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 px-3 py-2 md:px-4 md:py-2 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-2 backdrop-blur-sm text-sm md:text-base"
       >
-        <span className="text-base md:text-lg">📚</span>
-        <span className="hidden sm:inline">Journals</span>
+        <span className="text-base md:text-lg"><Library /></span>
+        <span className="hidden sm:inline">Lists</span>
       </button>
 
       {/* New Book Button */}
@@ -273,8 +74,8 @@ const ControlPanel = ({
         disabled={isLoading}
         className="bg-green-500 hover:bg-green-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-2 disabled:opacity-50 text-sm md:text-base"
       >
-        <span className="text-base md:text-lg">➕</span>
-        <span className="hidden sm:inline">New Journal</span>
+        <span className="text-base md:text-lg"><FilePlus2/></span>
+        <span className="hidden sm:inline">New</span>
       </button>
     </>
   );
@@ -290,7 +91,7 @@ const ControlPanel = ({
             : 'bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800'
         }`}
       >
-        <span className="text-base md:text-lg">🔍</span>
+        <span className="text-base md:text-lg"><Search/></span>
         <span className="hidden xs:inline">Search</span>
       </button>
 
@@ -303,7 +104,7 @@ const ControlPanel = ({
             : 'bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800'
         }`}
       >
-        <span className="text-base md:text-lg">🎨</span>
+        <span className="text-base md:text-lg"><BookDashed/></span>
         <span className="hidden xs:inline">Templates</span>
       </button>
 
@@ -316,7 +117,7 @@ const ControlPanel = ({
             : 'bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800'
         }`}
       >
-        <span className="text-base md:text-lg">⚙️</span>
+        <span className="text-base md:text-lg"><Columns3Cog /></span>
         <span className="hidden xs:inline">Customize</span>
       </button>
 
@@ -326,7 +127,7 @@ const ControlPanel = ({
         disabled={isAddingPage || isFlipping}
         className="bg-indigo-500 hover:bg-indigo-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-2 disabled:opacity-50 text-sm md:text-base"
       >
-        <span className="text-base md:text-lg">📄</span>
+        <span className="text-base md:text-lg"><Plus /></span>
         <span className="hidden xs:inline">Add Pages</span>
       </button>
 
@@ -344,7 +145,7 @@ const ControlPanel = ({
             </>
           ) : (
             <>
-              <span className="text-base md:text-lg">📥</span>
+              <span className="text-base md:text-lg"><BookDown /></span>
               <span className="hidden xs:inline">Download</span>
             </>
           )}
@@ -403,7 +204,7 @@ const ControlPanel = ({
       >
         <span className="text-base md:text-lg">{isBookOpen ? '📖' : '📘'}</span>
         <span className="hidden sm:inline">
-          {isBookOpen ? 'Close Journal' : 'Open Journal'}
+          {isBookOpen ? 'Close' : 'Open'}
         </span>
       </button>
 
@@ -415,7 +216,7 @@ const ControlPanel = ({
             onClick={onLogout}
             className="text-xs md:text-lg text-red-500 hover:text-red-700 transition-colors"
           >
-            Logout
+        <LogOut />
           </button>
         </div>
       )}
@@ -478,7 +279,7 @@ const ControlPanel = ({
                   className="w-full bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 px-4 py-3 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-3 text-left"
                 >
                   <span className="text-lg">📚</span>
-                  <span>My Journals</span>
+                  <span>My Books</span>
                 </button>
 
                 <button
@@ -489,15 +290,15 @@ const ControlPanel = ({
                   disabled={isLoading}
                   className="w-full bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-3 text-left disabled:opacity-50"
                 >
-                  <span className="text-lg">➕</span>
-                  <span>Create New Journal</span>
+                  <span className="text-lg"><Plus</span>
+                  <span>Create New Notes</span>
                 </button>
               </div>
 
               {/* Book Controls in Menu */}
               {isBookOpen && (
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-sm font-semibold text-gray-500 px-2">Journal Tools</h3>
+                  <h3 className="text-sm font-semibold text-gray-500 px-2">Notes Tools</h3>
                   <BookControls />
                 </div>
               )}
