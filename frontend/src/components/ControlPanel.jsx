@@ -290,7 +290,7 @@ const ControlPanel = ({
                   disabled={isLoading}
                   className="w-full bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-3 text-left disabled:opacity-50"
                 >
-                  <span className="text-lg"><Plus</span>
+                  <span className="text-lg"><Plus/></span>
                   <span>Create New Notes</span>
                 </button>
               </div>
