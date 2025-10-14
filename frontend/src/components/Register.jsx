@@ -101,7 +101,7 @@ const Register = ({ onSwitchToLogin }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br bg-gray-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br bg-gray-1800 flex items-center justify-center p-4">
       <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 w-full max-w-md border border-white/20 shadow-2xl">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-white mb-2">
