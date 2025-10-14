@@ -189,7 +189,7 @@ const colors = [
         {/* Download Dropdown Menu */}
         {showDownloadMenu && !isDownloading && (
           <>
-            <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
+            <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
               <button
                 onClick={() => {
                   onDownloadBook('html');
