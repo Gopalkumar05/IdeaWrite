@@ -89,7 +89,7 @@ const Book = () => {
               const img = new Image();
               const imageUrl = backgroundImage.startsWith('http') 
                 ? backgroundImage 
-                : `http://localhost:5000${backgroundImage}`;
+                : `https://ideawrite.onrender.com${backgroundImage}`;
               img.src = imageUrl;
             }
             
@@ -531,7 +531,7 @@ const Book = () => {
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 flex items-center justify-center">
         <div className="text-white text-xl flex items-center gap-3">
           <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-          Loading your journals...
+          Loading your NoteBooks...
         </div>
       </div>
     );
