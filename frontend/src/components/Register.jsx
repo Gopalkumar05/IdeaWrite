@@ -107,7 +107,7 @@ const Register = ({ onSwitchToLogin }) => {
           <h2 className="text-3xl font-bold text-white mb-2">
             Create Account
           </h2>
-          <p className="text-white/70">Start your digital journal journey</p>
+          <p className="text-white/70">Start your digital NoteBook</p>
         </div>
         
         {error && (
