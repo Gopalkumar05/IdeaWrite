@@ -184,10 +184,10 @@ const NavigationButtons = ({ turnPage, isFlipping, currentPage, pages = [], isMo
           text-align: center;
         }
 
-        .mobile {
-          bottom: 0.75rem;
-          padding: 0.25rem 0.75rem;
-        }
+        // .mobile {
+        //   bottom: 0.75rem;
+        //   padding: 0.25rem 0.75rem;
+        // }
 
         @media (max-width: 768px) {
           .nav-btn {
