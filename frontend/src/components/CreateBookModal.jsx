@@ -13,7 +13,7 @@ const CreateBookModal = ({ onCreate, onCancel, isLoading }) => {
   };
 
   const handleQuickCreate = () => {
-    onCreate('My Digital Journal', 'My personal NoteBook');
+    onCreate('My Digital NoteBook', 'My personal NoteBook');
   };
 
   return (
@@ -59,7 +59,7 @@ const CreateBookModal = ({ onCreate, onCancel, isLoading }) => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Journal Title *
+                NoteBook Title *
               </label>
               <input
                 type="text"
