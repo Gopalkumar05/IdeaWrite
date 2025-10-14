@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 
 const CreateBookModal = ({ onCreate, onCancel, isLoading }) => {
-  const [title, setTitle] = useState('My Digital Journal');
-  const [description, setDescription] = useState('My personal journal');
+  const [title, setTitle] = useState('My Digital NoteBook');
+  const [description, setDescription] = useState('My personal NoteBook');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,14 +13,14 @@ const CreateBookModal = ({ onCreate, onCancel, isLoading }) => {
   };
 
   const handleQuickCreate = () => {
-    onCreate('My Digital Journal', 'My personal journal');
+    onCreate('My Digital Journal', 'My personal NoteBook');
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-60 p-4">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden">
         <div className="p-6">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Create New Journal</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">Create New NoteBook</h2>
           
           {/* Quick Create Option */}
           <div className="mb-6">
@@ -42,7 +42,7 @@ const CreateBookModal = ({ onCreate, onCancel, isLoading }) => {
               )}
             </button>
             <p className="text-sm text-gray-500 mt-2 text-center">
-              Creates a journal with default settings
+              Creates a NoteBook with default settings
             </p>
           </div>
 
@@ -65,7 +65,7 @@ const CreateBookModal = ({ onCreate, onCancel, isLoading }) => {
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                placeholder="Enter journal title..."
+                placeholder="Enter NoteBook title..."
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
                 disabled={isLoading}
@@ -83,7 +83,7 @@ const CreateBookModal = ({ onCreate, onCancel, isLoading }) => {
               <textarea
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                placeholder="Describe your journal..."
+                placeholder="Describe your NoteBook..."
                 rows="3"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 disabled={isLoading}
@@ -103,7 +103,7 @@ const CreateBookModal = ({ onCreate, onCancel, isLoading }) => {
                 {isLoading && (
                   <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                 )}
-                Create Journal
+                Create NoteBook
               </button>
               <button
                 type="button"
