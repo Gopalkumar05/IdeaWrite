@@ -51,9 +51,9 @@ const ControlPanel = ({
   const MobileMenuButton = () => (
     <button
       onClick={() => setShowMobileMenu(!showMobileMenu)}
-      className="md:hidden bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 p-3 rounded-lg shadow-lg transition-all duration-300"
+      className="md:hidden bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 p-2 rounded-lg shadow-lg transition-all duration-300"
     >
-      <span className="text-xl">☰</span>
+      <span className="text-base  md:text-lg"><Menu /></span>
     </button>
   );
 
