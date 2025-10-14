@@ -539,7 +539,7 @@ const Book = () => {
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${bgcolor}  p-4 flex flex-col justify-center items-center font-sans overflow-hidden relative`}>
+    <div className={`min-h-screen bg-gradient-to-br ${bgColor}  p-4 flex flex-col justify-center items-center font-sans overflow-hidden relative`}>
      {error && (
         <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50">
           {error}
