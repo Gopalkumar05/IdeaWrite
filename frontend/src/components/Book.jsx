@@ -528,7 +528,7 @@ const Book = () => {
 
   if (loading && userBooks.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br bg-gray-100 flex items-center justify-center">
         <div className="text-white text-xl flex items-center gap-3">
           <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
           Loading your NoteBooks...
@@ -538,7 +538,7 @@ const Book = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 p-4 flex flex-col justify-center items-center font-sans overflow-hidden relative">
+    <div className="min-h-screen bg-gradient-to-br bg-gray-100  p-4 flex flex-col justify-center items-center font-sans overflow-hidden relative">
      {error && (
         <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50">
           {error}
