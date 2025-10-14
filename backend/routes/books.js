@@ -112,7 +112,7 @@ router.post('/', auth, bookValidation.create, async (req, res) => {
       },
       {
         pageNumber: 1,
-        content: '# Welcome to Your Digital Journal! ✨\n\nStart writing your story...',
+        content: '# Welcome to Your Digital Notes! ✨\n\nStart writing your story...',
         type: 'text',
         customization: {
           textColor: '#2d3748',
@@ -126,8 +126,8 @@ router.post('/', auth, bookValidation.create, async (req, res) => {
     ];
 
     const book = new Book({
-      title: title || 'My Digital Journal',
-      description: description || 'My personal journal',
+      title: title || 'My Digital Notes',
+      description: description || 'My personal Notes',
       coverImage,
       tags: tags || [],
       isPublic,
