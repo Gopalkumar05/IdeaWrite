@@ -143,7 +143,8 @@ const NavigationButtons = ({ turnPage, isFlipping, currentPage, pages = [], isMo
       <style>{`
         .nav-container {
           position: fixed;
-          bottom: 1.5rem;
+          // bottom: 1.5rem;
+          bottom: 0.4rem;
           left: 50%;
           transform: translateX(-50%);
           display: flex;
