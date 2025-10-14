@@ -19,6 +19,7 @@ import { downloadAsHTML, generateSimplePDF } from '../utils/pdfGenerator';
 const Book = () => {
   const { user, logout } = useAuth();
   const [pages, setPages] = useState([]);
+    const [bgColor, setBgColor] = useState("bg-gray-400");
   const [currentPage, setCurrentPage] = useState(0);
   const [isFlipping, setIsFlipping] = useState(false);
   const [isBookOpen, setIsBookOpen] = useState(false);
@@ -538,7 +539,7 @@ const Book = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br bg-gray-100  p-4 flex flex-col justify-center items-center font-sans overflow-hidden relative">
+    <div className={`min-h-screen bg-gradient-to-br ${bgcolor}  p-4 flex flex-col justify-center items-center font-sans overflow-hidden relative`}>
      {error && (
         <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50">
           {error}
@@ -584,6 +585,7 @@ const Book = () => {
         onDownloadBook={downloadBook}
         isDownloading={isDownloading}
         isMobile={isMobile}
+           setBgColor={setBgColor} 
       />
 
       {showBookList && (
