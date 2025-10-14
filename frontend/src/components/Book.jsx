@@ -528,7 +528,7 @@ const Book = () => {
 
   if (loading && userBooks.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br bg-gray-100 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br bg-gray-800 flex items-center justify-center">
         <div className="text-white text-xl flex items-center gap-3">
           <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
           Loading your NoteBooks...
