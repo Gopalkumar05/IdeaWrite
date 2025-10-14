@@ -26,12 +26,29 @@ const ControlPanel = ({
   isAddingPage,
   isFlipping,
   onDownloadBook,
-  isDownloading
+  isDownloading,
+  setBgColor
 }) => {
   const [showDownloadMenu, setShowDownloadMenu] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+ const [selectedColor, setSelectedColor] = useState("");
 
+  
+const handleColorChange = (e) => {
+  const newColor = e.target.value;
+  setSelectedColor(newColor);
+  setBgColor(newColor); 
+};
+
+const colors = [
+  { name: "Gray", value: "bg-gray-100" },
+  { name: "White", value: "bg-white" },
+  { name: "Blue", value: "bg-blue-100" },
+  { name: "Mint", value: "bg-green-100" },
+  { name: "Lavender", value: "bg-purple-100" },
+  { name: "Dark", value: "bg-neutral-900 text-white" },
+];
   // Check screen size
   useEffect(() => {
     const checkScreenSize = () => {
@@ -107,6 +124,24 @@ const ControlPanel = ({
         <span className="text-base md:text-lg"><BookDashed/></span>
         <span className="hidden xs:inline">Templates</span>
       </button>
+
+<select
+    value={selectedColor}
+    onChange={handleColorChange}
+    className={`px-2 py-1 md:px-3 md:py-1 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-2 backdrop-blur-sm text-sm md:text-base ${
+          showTemplates 
+            ? 'bg-purple-500 text-white' 
+            : 'bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800'
+        }`}
+  >
+   
+    {colors.map((c) => (
+      <option key={c.value} value={c.value}>
+        {c.name}
+      </option>
+    ))}
+  </select>
+      
 
       {/* Customize Button */}
       <button
