@@ -8,7 +8,7 @@ const DeleteConfirmationModal = ({ book, onConfirm, onCancel }) => {
         <div className="p-6 text-center">
           <div className="text-4xl mb-4">⚠️</div>
           <h3 className="text-xl font-bold text-gray-800 mb-2">
-            Delete Journal?
+            Delete NoteBook?
           </h3>
           <p className="text-gray-600 mb-2">
             Are you sure you want to delete <strong>"{book.title}"</strong>?
