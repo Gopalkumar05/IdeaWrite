@@ -4,7 +4,7 @@
 export const properInitialPages = [
   {
     pageNumber: 0,
-    content: '# Welcome to Your Digital Journal\n\nStart your writing journey...',
+    content: '# Welcome to Your Digital Notes\n\nStart your writing journey...',
     type: 'cover',
     customization: {
       fontFamily: 'serif',
