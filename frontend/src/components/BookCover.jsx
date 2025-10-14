@@ -45,21 +45,21 @@ const BookCover = ({ isBookOpen, pages = [], currentBook, onCreateNewBook, onPag
           )}
           {!isBookOpen && (
             <div className="click-hint">
-              Click to open Notes
+              Click to open NoteBook
             </div>
           )}
         </>
       ) : (
         <>
           <div className="cover-title">
-            Digital Notes
+            Digital NoteBook
           </div>
           <div className="cover-description">Your stories await...</div>
           <button 
             onClick={handleCreateBookClick}
             className="create-button"
           >
-            Start Your First Note
+            Start Your First NoteBook
           </button>
         </>
       )}
