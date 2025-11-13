@@ -64,21 +64,37 @@ console.log("SENDING OTP TO:", email, "USERNAME:", username);
     });
 
     // Send OTP email
-    try {
-      await sendOTPEmail(email, otp, username);
-      res.json({ 
-        success: true,
-        message: 'OTP sent to your email address',
-        email: email,
-        requiresOTP: true // Important flag for frontend
-      });
-    } catch (emailError) {
-      console.error('Email sending failed:', emailError);
-      return res.status(500).json({ 
-        success: false,
-        message: 'Failed to send OTP email' 
-      });
-    }
+    // try {
+    //   await sendOTPEmail(email, otp, username);
+    //   res.json({ 
+    //     success: true,
+    //     message: 'OTP sent to your email address',
+    //     email: email,
+    //     requiresOTP: true // Important flag for frontend
+    //   });
+    // } catch (emailError) {
+    //   console.error('Email sending failed:', emailError);
+    //   return res.status(500).json({ 
+    //     success: false,
+    //     message: 'Failed to send OTP email' 
+    //   });
+    // }
+
+// Send Email in Background (NO AWAIT)
+sendOTPEmail(email, otp, username)
+  .then(info => console.log("OTP email sent:", info.messageId))
+  .catch(err => console.error("Email error (background):", err));
+
+// Return response immediately (NO TIMEOUT)
+return res.json({
+  success: true,
+  message: "OTP send request accepted (may take a few seconds)",
+  email: email,
+  requiresOTP: true
+});
+
+
+    
   } catch (error) {
     res.status(500).json({ 
       success: false,
