@@ -1,1 +1,87 @@
 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="240" height="240" aria-labelledby="titleDesc" role="img">
+  <title id="titleDesc">Lightbulb idea icon</title>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff7b2"/>
+      <stop offset="0.45" stop-color="#ffd66b"/>
+      <stop offset="1" stop-color="#ff9a4d"/>
+    </linearGradient>
+
+    <radialGradient id="g2" cx="35%" cy="30%" r="60%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="outerGlow" x="-75%" y="-75%" width="250%" height="250%">
+      <feGaussianBlur stdDeviation="6" result="gblur"/>
+      <feColorMatrix in="gblur" type="matrix"
+        values="0 0 0 0 1
+                0 0 0 0 0.7
+                0 0 0 0 0.2
+                0 0 0 0.6" />
+      <feBlend in="SourceGraphic" mode="screen"/>
+    </filter>
+  </defs>
+
+  <!-- Glow behind bulb -->
+  <g filter="url(#outerGlow)" opacity="0.75">
+    <circle cx="32" cy="24" r="16" fill="url(#g1)" />
+  </g>
+
+  <!-- Bulb glass -->
+  <g filter="url(#softGlow)">
+    <path d="M32 8
+             c8 0 14 6 14 14
+             c0 6-4 10-6 12
+             v2
+             c0 2-2 4-6 4
+             h-4
+             c-4 0-6-2-6-4
+             v-2
+             c-2-2-6-6-6-12
+             c0-8 6-14 14-14z"
+          fill="url(#g1)" stroke="#8a5b2a" stroke-width="1.2" stroke-linejoin="round"/>
+
+    <!-- Glass highlight -->
+    <ellipse cx="28" cy="18" rx="10" ry="6" fill="url(#g2)" opacity="0.9" />
+
+    <!-- Filament -->
+    <g stroke="#5a3218" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M24 28
+               q4 -6 8 0" />
+      <path d="M28 28
+               v4
+               m8 -4
+               v4" />
+      <circle cx="32" cy="28" r="1.3" fill="#5a3218" stroke="none"/>
+    </g>
+
+    <!-- Screw base -->
+    <rect x="22" y="36" width="20" height="10" rx="2" fill="#bfbfbf" stroke="#8a8a8a" stroke-width="0.9"/>
+    <rect x="22" y="44" width="20" height="3" rx="1" fill="#9e9e9e" stroke="#7a7a7a" stroke-width="0.6"/>
+    <line x1="24" y1="36" x2="40" y2="36" stroke="#7a7a7a" stroke-width="0.7" opacity="0.6"/>
+  </g>
+
+  <!-- Subtle outline -->
+  <path d="M32 8
+           c8 0 14 6 14 14
+           c0 6-4 10-6 12
+           v2
+           c0 2-2 4-6 4
+           h-4
+           c-4 0-6-2-6-4
+           v-2
+           c-2-2-6-6-6-12
+           c0-8 6-14 14-14z"
+        fill="none" stroke="#6b4220" stroke-width="0.9" stroke-linejoin="round" opacity="0.9"/>
+
+</svg>
