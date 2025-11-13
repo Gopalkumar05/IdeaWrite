@@ -63,7 +63,7 @@ console.log("SENDING OTP TO:", email, "USERNAME:", username);
       userData: { username, email, password }
     });
 
-    Send OTP email
+  
     try {
       await sendOTPEmail(email, otp, username);
       res.json({ 
