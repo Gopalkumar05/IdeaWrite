@@ -111,7 +111,7 @@ const ForgotPassword = ({ onBackToLogin, onSwitchToRegister }) => {
 
   console.log('📝 RENDERING: ForgotPassword Form');
   return (
-    <div className="min-h-screen bg-gradient-to-br bg-gray-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br bg-gray-800 flex items-center justify-center p-4">
       <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 w-full max-w-md border border-white/20 shadow-2xl">
         <div className="text-center mb-8">
           <button
