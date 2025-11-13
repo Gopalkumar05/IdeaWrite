@@ -35,6 +35,13 @@ router.post('/register', async (req, res) => {
         message: 'User with this email or username already exists' 
       });
     }
+    if (!username || username.trim() === "") {
+  return res.status(400).json({
+    success: false,
+    message: "Username is required"
+  });
+}
+
 
     // Validate password
     if (password.length < 6) {
