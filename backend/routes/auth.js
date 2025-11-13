@@ -42,6 +42,7 @@ router.post('/register', async (req, res) => {
   });
 }
 
+  
 
     // Validate password
     if (password.length < 6) {
@@ -50,7 +51,7 @@ router.post('/register', async (req, res) => {
         message: 'Password must be at least 6 characters long' 
       });
     }
-
+console.log("SENDING OTP TO:", email, "USERNAME:", username);
     // Generate OTP
     const otp = generateOTP();
     const otpExpiry = Date.now() + 10 * 60 * 1000; // 10 minutes
